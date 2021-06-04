@@ -2,14 +2,14 @@
 
 ## Business Understanding
 
-Our client is Genesis Capital, a house flipping company, and they are wanting to get in the martel in king county. Being that they are not from king county they need some help to understand the market. They want to know out of all the feathers for the house in king county which features have the most significant effect on the price of a house.They also want to know which feathers affect the house’s price the most, both positively and negatively.
+Our client is Genesis Capital's 'Fix & Flip' Division, a department within the real estate lending corporation in charge of lending to and participating in flipping houses. They are interested in the possibility of looking at the housing market in King County, Washington.
+
+What is important to them, as a lender, is the pricing of the houses in King County. The features that affect price the most should be our goals for the model, as well as finding out the features to ignore and the features that negatively affect price.
+
 
 ### Business Problem
-
-Business Questions:
-
-What features affect the price significantly?
-How do they affect the price, positive and negative ?
+1. What features affect price the most?
+2. What features should Genesis Capital pursue, ignore, or avoid?
 
 
 ## Data Understanding
@@ -56,6 +56,35 @@ Let use the features that have a R-squared equal to or greater than 0.500: Grade
 
 ## Conclusion
 
-Overall we found that sqft living and lot, number of bedrooms, number of floors, waterfront view, the year the house was built, and it's zip code location has the most significant impact on the price of a house. With our final model set and dont we can see how these features affect the price of a house, namly which top one affects positively/negatively. Having a house with a waterfront alone immediately increases a house by $8.6 hundred thousand. While each bedroom decreases the overall price of a house by $3,800. Our final model has an improved accuracy of 78%.
+Overall, our final model had the following features:
+
+Target: Price
+
+Features: sqft_living, sqft_lot, bedrooms, waterfront, yr_built, and zipcode (as categoricals)
+
+Adjusted R-Squared: 0.840
+
+According to our final model, Genesis Capital needs to pay the most attention to whether or not the property is a waterfront property. Waterfront properties get a huge price boost in our model. Square foot living space, unsurprisingly, is another steady and significant coefficient. Bathrooms also significantly raise the price.
+
+Negative coefficients include the number of bedrooms (surprisingly!), and as the year the house was built increases, there is actually a slight decrease in price. This could be due to extraneous factors such as modern housing being smaller and more space-efficient than older houses.
+
+According to our model, Genesis Capital's team should pursue the following features when looking for houses:
+
+1. A waterfront view
+2. Many bathrooms
+3. A large square footage of living space
+4. Location in an expensive area
+
+Conversely, they should avoid/ignore the following features: 
+
+1. Ignore the number of floors
+2. Avoide houses with many bedrooms
+3. Examine the year it was built, but we are unsure if this is truly significant or if there are other factors at play
+
+Finally, we isolated some of the most expensive zipcodes:
+
+1. 98039 - Medina
+2. 98004 - Bellevue
+3. 98112 - Seattle
 
 
