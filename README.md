@@ -1,10 +1,22 @@
 # Phase 2 Project
 
-Another module down--you're almost half way there!
+## Business Understanding
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-2-project-campus/master/halfway-there.gif)
+### Business Problem
 
-All that remains in Phase 2 is to put our newfound data science skills to use with a large project! This project should take 20 to 30 hours to complete.
+## Data Understanding
+
+## Data Preparation
+
+## Modeling
+
+### First Simple Model
+
+### Features
+
+## Conclusion
+
+
 
 ## Project Overview
 
@@ -13,19 +25,6 @@ For this project, you will use regression modeling to analyze house sales in a n
 ### The Data
 
 This project uses the King County House Sales dataset, which can be found in  `kc_house_data.csv` in the data folder in this repo. The description of the column names can be found in `column_names.md` in the same folder. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions about what the data means.
-
-It is up to you to decide what data from this dataset to use and how to use it. If you are feeling overwhelmed or behind, we recommend you ignore some or all of the following features:
-
-* date
-* view
-* sqft_above
-* sqft_basement
-* yr_renovated
-* zipcode
-* lat
-* long
-* sqft_living15
-* sqft_lot15
 
 ### Business Problem
 
@@ -63,4 +62,3 @@ Review the "Project Submission & Review" page in the "Milestones Instructions" t
 
 ## Summary
 
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
