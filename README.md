@@ -23,23 +23,23 @@ Available Predictors: bedrooms, bathrooms, square footage of living space, squar
 
 ## Data Preparation
 
-Dataset: Entries of sales in King County contains over 21,597 entries form 2014 and 2015 with 21 different features including are target price. Some available predictors are: square footage of living space, number of floors, waterfront house or not and several others.
+Dataset: Entries of sales in King County contains over 21,597 entries form 2014 and 2015 with 21 different features including are target price. 
+Some available predictors are: square footage of living space, number of floors, waterfront, and several others.
 
 ## Modeling
 
 ### First Simple Model
 
-![](Corr_living.png)
+![](images/fsm_corr.png)
 
-Square Foot Living was chosen for the First Simple Model do to its high correlation with housing price. Be examines the relationship between these two we get an accuracy in are model of 49.3%. For each sqft the price increases by $280 for this model.
+Square Foot Living was chosen for the First Simple Model due to its high correlation with housing price. 
+We examine the relationship between these two we get an initial R-Squared in our model of 49.3%. 
+Our coefficient is 280, meaning that within this simple linear regression, for each square foot that the house increases, the predicted price increases by $280.
+
+![](images/fsm_resid.png)
 
 ### Feature Testing
 Let start testing some features and see what we get. The first two features we are testing are categorical columns so we will need to use are dummy model function, and add them to are R-squared tracker.
-
-Do the features effect the price in a significant way?
--Null: These features do not effect the price in a significant way?
-
--Alt: These features do effect the price in a significant way?
 
 ### Feature Testing Results
 
@@ -87,4 +87,32 @@ Finally, we isolated some of the most expensive zipcodes:
 2. 98004 - Bellevue
 3. 98112 - Seattle
 
-
+### Repo Structure
+```
+├── Code
+│   ├── IMDB_data.ipynb
+│   ├── New_IMDB_dataset.ipynb
+│   ├── rt_data.ipynb
+│   └── tn_cleaning.ipynb
+|
+├── Visualizations
+│   ├── Actor_profitability.png
+│   ├── Director_profitability.png
+│   ├── Genre_profitability.png
+│   ├── Genre_profitability_boxplot.png
+│   ├── Keyword_Bubble.png
+│   ├── Keyword_counts.png
+│   ├── Keyword_revenue.png
+│   ├── Production Budget vs. Gross Revenue Scatter.png
+│   ├── RT_Tomatometer_ratings_box_correlation.PNG
+│   ├── RT_ratings_box_correlation.png
+│   └── production_gross_scatter.png
+|
+├── zippedData
+├── .canvas
+├── .gitignore
+├── LICENSE.md
+├── README.md
+├── phase_1_presentation.pdf
+└── technical_notebook.ipynb
+```
