@@ -29,16 +29,33 @@ Dataset: Entries of sales in King County contains over 21,597 entries form 2014 
 
 ### First Simple Model
 
-
+![](Corr_living.png)
 
 Square Foot Living was chosen for the First Simple Model do to its high correlation with housing price. Be examines the relationship between these two we get an accuracy in are model of 49.3%. For each sqft the price increases by $280 for this model.
 
-### Features
+### Feature Testing
+Let start testing some features and see what we get. The first two features we are testing are categorical columns so we will need to use are dummy model function, and add them to are R-squared tracker.
 
-Overall we found that sqft living and lot, number of bedrooms, number of floors, waterfront view, the year the house was built, and it's zip code location has the most significant impact on the price of a house. With our final model set and dont we can see how these features affect the price of a house, namly which top one affects positively/negatively. Having a house with a waterfront alone immediately increases a house by $8.6 hundred thousand. While each bedroom decreases the overall price of a house by $3,800. Our final model has an improved accuracy of 78%.
+Do the features effect the price in a significant way?
+-Null: These features do not effect the price in a significant way?
+
+-Alt: These features do effect the price in a significant way?
+
+### Feature Testing Results
+
+Do the features effect the price in a significant way?
+
+-Null: These features do not effect the price in a significant way?
+Bathroom, Floors, Condition, and Grade(3-10)
+
+-Alt: These features do effect the price in a significant way?
+Bedrooms, Sqft Lot, Sqft Above, Sqft Basement, Sqft Living15, Sqft Lot15, Year_Built, Year Renovated, Waterfront, View, and Grade(11 - 13)
+
+For the festures that do effect the price, which ones fit the model best?
+Let use the features that have a R-squared equal to or greater than 0.500: Grade(11 -13), Bedrooms, Sqft Living15, Year Built, Waterfront, and View
 
 ## Conclusion
 
-
+Overall we found that sqft living and lot, number of bedrooms, number of floors, waterfront view, the year the house was built, and it's zip code location has the most significant impact on the price of a house. With our final model set and dont we can see how these features affect the price of a house, namly which top one affects positively/negatively. Having a house with a waterfront alone immediately increases a house by $8.6 hundred thousand. While each bedroom decreases the overall price of a house by $3,800. Our final model has an improved accuracy of 78%.
 
 
