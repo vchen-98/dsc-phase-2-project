@@ -136,36 +136,41 @@ Conversely, they should avoid/ignore the following features:
 2. Find a dataset with relevant renovation-specific information to create a model. Our next goal in this is to create a model in which renovation types, costs, and all come together to help predict the selling price. 
 
 ### For More Information:
-Please review our full analysis in our [Technical Notebook](./technical_notebook.ipynb), our [Visualizations](./images), or our [Presentation](./phase_1_presentation.pdf). 
+Please review our full analysis in our [Technical Notebook](./technical_notebook.ipynb), our [Visualizations](./images), or our [Presentation](./flatiron_phase_2_template_presentation.pdf). 
 
 For any additional questions, please contact Victor Chen and Bradly Horn
 
 ### Repo Structure
 ```
-├── Code
-│   ├── IMDB_data.ipynb
-│   ├── New_IMDB_dataset.ipynb
-│   ├── rt_data.ipynb
-│   └── tn_cleaning.ipynb
+├── code
+│   ├── GeoPandas Notebook.ipynb
+│   ├── Model Notebook.ipynb
+│   └── student.ipynb
 |
-├── Visualizations
-│   ├── Actor_profitability.png
-│   ├── Director_profitability.png
-│   ├── Genre_profitability.png
-│   ├── Genre_profitability_boxplot.png
-│   ├── Keyword_Bubble.png
-│   ├── Keyword_counts.png
-│   ├── Keyword_revenue.png
-│   ├── Production Budget vs. Gross Revenue Scatter.png
-│   ├── RT_Tomatometer_ratings_box_correlation.PNG
-│   ├── RT_ratings_box_correlation.png
-│   └── production_gross_scatter.png
+├── data
+│   ├── School_Districts_in_King_County___schdst_area.cpg
+│   ├── School_Districts_in_King_County___schdst_area.dbf
+│   ├── School_Districts_in_King_County___schdst_area.prj
+│   ├── School_Districts_in_King_County___schdst_area.shp
+│   ├── School_Districts_in_King_County___schdst_area.shx
+│   ├── School_Districts_in_King_County___schdst_area.xml
+│   ├── column_names.md
+│   ├── kc_house_data.csv
+│   ├── kc_house_data_clean
+│   └── kc_house_data_clean.csv
 |
-├── zippedData
+├── images
+│   ├── fsm_corr.png
+│   ├── fsm_resid.png
+│   ├── log_transform_final_model.png
+│   ├── modeling_process.PNG
+│   └── pre_transform_final_model.png
+|
 ├── .canvas
 ├── .gitignore
+├── CONTRIBUTING.md
 ├── LICENSE.md
 ├── README.md
-├── phase_1_presentation.pdf
+├── flatiron_phase_2_template_presentation.pdf
 └── technical_notebook.ipynb
 ```
