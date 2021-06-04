@@ -1,66 +1,90 @@
 # Phase 2 Project
 
-Another module down--you're almost half way there!
+## Business Understanding
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-2-project-campus/master/halfway-there.gif)
+Our client is Genesis Capital's 'Fix & Flip' Division, a department within the real estate lending corporation in charge of lending to and participating in flipping houses. They are interested in the possibility of looking at the housing market in King County, Washington.
 
-All that remains in Phase 2 is to put our newfound data science skills to use with a large project! This project should take 20 to 30 hours to complete.
+What is important to them, as a lender, is the pricing of the houses in King County. The features that affect price the most should be our goals for the model, as well as finding out the features to ignore and the features that negatively affect price.
 
-## Project Overview
-
-For this project, you will use regression modeling to analyze house sales in a northwestern county.
-
-### The Data
-
-This project uses the King County House Sales dataset, which can be found in  `kc_house_data.csv` in the data folder in this repo. The description of the column names can be found in `column_names.md` in the same folder. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions about what the data means.
-
-It is up to you to decide what data from this dataset to use and how to use it. If you are feeling overwhelmed or behind, we recommend you ignore some or all of the following features:
-
-* date
-* view
-* sqft_above
-* sqft_basement
-* yr_renovated
-* zipcode
-* lat
-* long
-* sqft_living15
-* sqft_lot15
 
 ### Business Problem
+1. What features affect price the most?
+2. What features should Genesis Capital pursue, ignore, or avoid?
 
-It is up to you to define a stakeholder and business problem appropriate to this dataset.
 
-If you are struggling to define a stakeholder, we recommend you complete a project for a real estate agency that helps homeowners buy and/or sell homes. A business problem you could focus on for this stakeholder is the need to provide advice to homeowners about how home renovations might increase the estimated value of their homes, and by what amount.
+## Data Understanding
 
-## Deliverables
+Interpretation:
+This data set is a record of house sales in King County, Washington, between 2014 and 2015. It includes information like the number of bedrooms, square footage (important!), condition, the year it was built, the year it was renovated (if applicable), and the zipcode and latitude/longitude. From this data, we can extrapolate location, age of the house, and size of the house, giving us a good look at how these factors affect the price.
 
-There are three deliverables for this project:
+Target: Price
 
-* A **GitHub repository**
-* A **Jupyter Notebook**
-* A **non-technical presentation**
+Available Predictors: bedrooms, bathrooms, square footage of living space, square footage of the lot, numuber of floors, waterfront house or not, number of viewers, condition based on a numeric scale, grade based on a numeric scale, square footage of the basement, year the house was built, year the house was renovated, zipcode, latitude/longitude, and square footage of living space of the nearest 15 neighbors
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
+## Data Preparation
 
-### Key Points
+Dataset: Entries of sales in King County contains over 21,597 entries form 2014 and 2015 with 21 different features including are target price. Some available predictors are: square footage of living space, number of floors, waterfront house or not and several others.
 
-* **Your deliverables should explicitly address each step of the data science process.** Refer to [the Data Science Process lesson](https://github.com/learn-co-curriculum/dsc-data-science-processes) from Topic 19 for more information about process models you can use.
+## Modeling
 
-* **Your Jupyter Notebook should demonstrate an iterative approach to modeling.** This means that you begin with a basic model, evaluate it, and then provide justification for and proceed to a new model. After you finish refining your models, you should provide 1-3 paragraphs discussing your final model - this should include interpreting at least 3 important parameter estimates or statistics.
+### First Simple Model
 
-* **Based on the results of your models, your notebook and presentation should discuss at least two features that have strong relationships with housing prices.**
+![](Corr_living.png)
 
-## Getting Started
+Square Foot Living was chosen for the First Simple Model do to its high correlation with housing price. Be examines the relationship between these two we get an accuracy in are model of 49.3%. For each sqft the price increases by $280 for this model.
 
-Start on this project by forking and cloning [this project repository](https://github.com/learn-co-curriculum/dsc-phase-2-project) to get a local copy of the dataset.
+### Feature Testing
+Let start testing some features and see what we get. The first two features we are testing are categorical columns so we will need to use are dummy model function, and add them to are R-squared tracker.
 
-We recommend structuring your project repository similar to the structure in [the Phase 1 Project Template](https://github.com/learn-co-curriculum/dsc-project-template). You can do this either by creating a new fork of that repository to work in or by building a new repository from scratch that mimics that structure.
+Do the features effect the price in a significant way?
+-Null: These features do not effect the price in a significant way?
 
-## Project Submission and Review
+-Alt: These features do effect the price in a significant way?
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
+### Feature Testing Results
 
-## Summary
+Do the features effect the price in a significant way?
 
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+-Null: These features do not effect the price in a significant way?
+Bathroom, Floors, Condition, and Grade(3-10)
+
+-Alt: These features do effect the price in a significant way?
+Bedrooms, Sqft Lot, Sqft Above, Sqft Basement, Sqft Living15, Sqft Lot15, Year_Built, Year Renovated, Waterfront, View, and Grade(11 - 13)
+
+For the festures that do effect the price, which ones fit the model best?
+Let use the features that have a R-squared equal to or greater than 0.500: Grade(11 -13), Bedrooms, Sqft Living15, Year Built, Waterfront, and View
+
+## Conclusion
+
+Overall, our final model had the following features:
+
+Target: Price
+
+Features: sqft_living, sqft_lot, bedrooms, waterfront, yr_built, and zipcode (as categoricals)
+
+Adjusted R-Squared: 0.840
+
+According to our final model, Genesis Capital needs to pay the most attention to whether or not the property is a waterfront property. Waterfront properties get a huge price boost in our model. Square foot living space, unsurprisingly, is another steady and significant coefficient. Bathrooms also significantly raise the price.
+
+Negative coefficients include the number of bedrooms (surprisingly!), and as the year the house was built increases, there is actually a slight decrease in price. This could be due to extraneous factors such as modern housing being smaller and more space-efficient than older houses.
+
+According to our model, Genesis Capital's team should pursue the following features when looking for houses:
+
+1. A waterfront view
+2. Many bathrooms
+3. A large square footage of living space
+4. Location in an expensive area
+
+Conversely, they should avoid/ignore the following features: 
+
+1. Ignore the number of floors
+2. Avoide houses with many bedrooms
+3. Examine the year it was built, but we are unsure if this is truly significant or if there are other factors at play
+
+Finally, we isolated some of the most expensive zipcodes:
+
+1. 98039 - Medina
+2. 98004 - Bellevue
+3. 98112 - Seattle
+
+
